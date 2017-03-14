@@ -21,16 +21,20 @@ include ("dbConnect.php");
 if(isset($_GET['id'])) {
     $superheroID = $_GET['id'];
     $sql_query = "Select * from superherobattles where superheroID='$superheroID'";
+    echo "got id".$superheroID;
+
 }
 else{
     $sql_query="select * from superherobattles";
 }
 $result =  $db->query($sql_query);
 while($row = $result->fetch_array()){
+    echo "in the fetch array loop";
     $firstname = $row['firstName'];
     $lastname = $row['lastName'];
     $mainSuperpower= $row['mainSuperpower'];
     $villanFought=$row['villanFought'];
+
     echo "<article>
                 <p>The superhero known as <strong>{$firstname}{$lastname}</strong> recently fought<strong>{$villanFought}</strong> using 
                 <strong> {$mainSuperpower}     </strong></p>
