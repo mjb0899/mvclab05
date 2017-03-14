@@ -6,9 +6,9 @@
  * Time: 14:49
  */
 include ("dbConnect.php");
-$superheroID= $_POST["superheroID"];
-$villanFought=$_POST["villanFought"];
-$sql = "Insert into battles (superheroID,villanFought) VALUES ('$superheroID','$villanFought')";
+$superheroID = $_POST["superheroID"];
+$villan = $_POST["villan"];
+$sql = "Insert into battles (superheroID,villanFought) VALUES ('$superheroID','$villan')";
 if(mysqli_query($db,$sql)){
 
 }else{

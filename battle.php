@@ -30,8 +30,8 @@ while($row = $result->fetch_array()) {
 }
 ?>
 </select><br>
-        <input type="text" name="villanFought" placeholder="Villan Fought" ><br>
-        <input type="submit" text="Record battle">
+        <input type="text" name="villan" placeholder="Villan Fought" ><br>
+        <input type="submit" >
 
 </form>
 </main>
