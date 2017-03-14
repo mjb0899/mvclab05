@@ -8,7 +8,7 @@
 include ("dbConnect.php");
 $superheroID= $_POST["superheroID"];
 $villan=$_POST["villan"];
-$sql = "Insert into battles (superheroID,villanFought) VALUES ('$superheroID','$villan')";
+$sql = "Insert into battles (superheroID,villanFought) VALUES ('$superheroID','$villanFought')";
 if(mysqli_query($db,$sql)){
 
 }else{
