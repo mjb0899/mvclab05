@@ -7,11 +7,11 @@
  */
 include ("dbConnect.php");
 $superheroID= $_POST["superheroID"];
-$villan=$_POST["villan"];
+$villanFought=$_POST["villanFought"];
 $sql = "Insert into battles (superheroID,villanFought) VALUES ('$superheroID','$villanFought')";
 if(mysqli_query($db,$sql)){
 
 }else{
     echo "Error:".$sql."<br>".mysqli_error($db);
 }
-header("location:index.php");
+header("location:displayBattles.php");
