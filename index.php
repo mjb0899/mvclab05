@@ -14,7 +14,7 @@
     <li><a href="superheroform.html">Insert superhero</a></li>
     <li><a href="displaySuperheros.php">Display all</a></li>
     <li><a href="battle.php">insert a battle</a></li>
-    <li><a href="displayBattles">display all battles</a></li>
+    <li><a href="displayBattles.php">display all battles</a></li>
 </ul>
 <?php
 include("dbConnect.php");

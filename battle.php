@@ -23,8 +23,8 @@ include("dbConnect.php");
 $sql_query ="Select * from superheros";
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
-    $firstname = $row['firstname'];
-    $lastname = $row['lastname'];
+    $firstname = $row['firstName'];
+    $lastname = $row['lastName'];
     $superheroID = $row['superheroID'];
     echo "<option value='{$superheroID}'>{$firstname}{$lastname}</option>";
 }
