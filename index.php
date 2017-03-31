@@ -24,7 +24,7 @@ while($row = $result -> fetch_array()){
     $firstname= $row['firstName'];
     $lastname= $row['lastName'];
     $id = $row['superheroID'];
-    echo "<li><a href='displayBattles.php?id={$id}'>Battles for {$firstname}{$lastName}</a></li>";
+    echo "<li><a href='displayBattles.php?id={$id}'>Battles for {$firstname}{$lastname}</a></li>";
 }
 ?>
 </body>
