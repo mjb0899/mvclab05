@@ -11,7 +11,7 @@
 </header>
 <main>
     <form action="insertBattle.php" method="post">
-        <p>Select a superhero that fought in this battle</p><select name="superhero">
+        <p>Select a superhero that fought in this battle</p><select name="superheroID">
 <?php
 /**
  * Created by PhpStorm.
