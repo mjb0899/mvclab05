@@ -6,9 +6,9 @@
 </head>
 <body>
 <form>
-    <div class="form-group" action="upload.php">
+    <div class="form-group" action="upload.php" method="post" enctype="multipart/form-data">
         <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile">
+        <input type="file" id="exampleInputFile" name="file">
         <p class="help-block">Example block-level help text here.</p>
     </div>
     <div class="checkbox">
