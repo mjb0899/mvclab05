@@ -15,6 +15,8 @@
     <li><a href="displaySuperheros.php">Display all</a></li>
     <li><a href="battle.php">insert a battle</a></li>
     <li><a href="displayBattles.php">display all battles</a></li>
+    <li><a href="uploadpage.html">uploadox</a></li>
+
 </ul>
 <?php
 include("dbConnect.php");
