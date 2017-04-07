@@ -1,36 +1,49 @@
 <?php
 
-# Include the Dropbox SDK libraries
-require_once "dropbox-sdk/Dropbox/autoload.php";
+require_once "dropbox-php-sdk-1.1.2/lib/Dropbox/autoload.php";
+
 use \Dropbox as dbx;
 
-$appInfo = dbx\AppInfo::loadFromJsonFile("composer.json");
+$dropbox_config = array(
+    'key'    => 'dsgqowtf8fojpd1',
+    'secret' => '2w9pe2khvugn3sj'
+);
+
+$appInfo = dbx\AppInfo::loadFromJson($dropbox_config);
 $webAuth = new dbx\WebAuthNoRedirect($appInfo, "PHP-Example/1.0");
 
 $authorizeUrl = $webAuth->start();
+echo "1. Go to: " . $authorizeUrl . "<br>";
+echo "2. Click \"Allow\" (you might have to log in first).<br>";
+echo "3. Copy the authorization code and insert it into $authCode.<br>";
 
-echo "1. Go to: " . $authorizeUrl . "\n";
-echo "2. Click \"Allow\" (you might have to log in first).\n";
-echo "3. Copy the authorization code.\n";
-$authCode = \trim(\readline("Enter the authorization code here: "));
+$authCode = trim('DjsR-iGv4PAAAAAAAAAAAbn9snrWyk9Sqrr2vsdAOm0');
 
 list($accessToken, $dropboxUserId) = $webAuth->finish($authCode);
-print "Access Token: " . $accessToken . "\n";
+echo "Access Token: " . $accessToken . "<br>";
 
 $dbxClient = new dbx\Client($accessToken, "PHP-Example/1.0");
-$accountInfo = $dbxClient->getAccountInfo();
 
-print_r($accountInfo);
-
+// Uploading the file
 $f = fopen("working-draft.txt", "rb");
 $result = $dbxClient->uploadFile("/working-draft.txt", dbx\WriteMode::add(), $f);
 fclose($f);
 print_r($result);
 
-$folderMetadata = $dbxClient->getMetadataWithChildren("/");
-print_r($folderMetadata);
+// Get file info
+$file = $dbxClient->getMetadata('/working-draft.txt');
 
-$f = fopen("working-draft.txt", "w+b");
-$fileMetadata = $dbxClient->getFile("/working-draft.txt", $f);
-fclose($f);
-print_r($fileMetadata);
+// sending the direct link:
+$dropboxPath = $file['path'];
+$pathError = dbx\Path::findError($dropboxPath);
+if ($pathError !== null) {
+    fwrite(STDERR, "Invalid <dropbox-path>: $pathError\n");
+    die;
+}
+
+// The $link is an array!
+$link = $dbxClient->createTemporaryDirectLink($dropboxPath);
+// adding ?dl=1 to the link will force the file to be downloaded by the client.
+$dw_link = $link[0]."?dl=1";
+
+echo "Download link: ".$dw_link."<br>";
