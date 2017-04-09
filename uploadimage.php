@@ -8,8 +8,10 @@ if(isset($_POST['submit'])){
     $fileType=$_FILES['file']['type'];
     $fileExt= explode('.',$fileName);
     $fileActualExt=strtolower(end($fileExt));
-    $allowed = array('jpg','jpeg','png','mp3');
-    if(in_array($fileActualExt,$allowed)){
+    $allowed_image = array('jpg','jpeg','png');
+    $allowed_media = array('mp4','mp3','txt');
+    //upload for images
+    if(in_array($fileActualExt,$allowed_image)){
         if($fileError===0){
             if($fileSize<1000000){
                 $fileNameNew = uniqid('',true).".".$fileActualExt;
@@ -22,10 +24,28 @@ if(isset($_POST['submit'])){
         }else{
             echo "Something went wrong with your file";
         }
-    }else{
+    }elseif(in_array($fileActualExt,$allowed_media)) {
+        //upload for music
+        if($fileError===0){
+            if($fileSize<1000000){
+                $fileNameNew = uniqid('',true).".".$fileActualExt;
+                $fileDestination='uploads/images/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination);
+                header("Location:index.php");
+            }else{
+                echo "File too big";
+            }
+        }else{
+            echo "Something went wrong with your file";
+        }
+
+    }
+    else{
         echo $fileName."-";
         echo $fileActualExt."+";
         echo $fileExt;
-        echo "you canot upload files of this type";
+        echo "you cannot upload files of this type";
     }
+
+
 }
