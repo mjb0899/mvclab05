@@ -8,7 +8,6 @@ if(isset($_POST['submit'])){
     $fileError=$_FILES['file']['error'];
     $fileType=$_FILES['file']['type'];
     $fileExt= explode('.',$fileName);
-
     $fileActualExt = strtolower(end($fileExt));
     $allowed = array('jpg','jpeg','png','mp3');
     if(in_array($fileActualExt,$allowed)){
@@ -25,8 +24,7 @@ if(isset($_POST['submit'])){
             echo "Something went wrong with your file";
         }
     }else{
-        echo $fileActualExt;
-        echo $allowed[1];
+        echo $fileActualExt."+";
         echo $fileExt;
         echo "you canot upload files of this type";
     }
