@@ -8,12 +8,12 @@ if(isset($_POST['submit'])){
     $fileError=$_FILES['file']['error'];
     $fileType=$_FILES['file']['type'];
     $fileExt= explode('.',$fileName);
-    $fileActualExt=strtolower(end($fileExt));
+    $fileExt=strtolower(end($fileExt));
     $allowed = array('jpg','jpeg','png','mp3');
-    if(in_array($fileActualExt,$allowed)){
+    if(in_array($fileExt,$allowed)){
         if($fileError===0){
             if($fileSize<100000){
-                $fileNameNew = uniqid('',true).".".$fileActualExt;
+                $fileNameNew = uniqid('',true).".".$fileExt;
                 $fileDestination='uploads/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDestination);
                 header("Location:index.php");
