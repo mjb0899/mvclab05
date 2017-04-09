@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     $fileError=$_FILES['file']['error'];
     $fileType=$_FILES['file']['type'];
     $fileExt= explode('.',$fileName);
-    $fileActualExt = strtolower(end($fileExt));
+    $fileActualExt=strtolower(end($fileExt));
     $allowed = array('jpg','jpeg','png','mp3');
     if(in_array($fileActualExt,$allowed)){
         if($fileError===0){
