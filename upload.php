@@ -1,12 +1,29 @@
 <?php
-
-$fileMetadata = new Google_Service_Drive_DriveFile(array(
-    'name' => 'photo.jpg'));
-$content = file_get_contents('files/photo.jpg');
-$file = $driveService->files->create($fileMetadata, array(
-    'data' => $content,
-    'mimeType' => 'image/jpeg',
-    'uploadType' => 'multipart',
-    'fields' => 'id'));
-printf("File ID: %s\n", $file->id);
-
+if(isset($_POST['submit'])){
+    $file = $_FILES['file'];
+    print_r($file);
+    $fileName=$_FILES['file']['name'];
+    $fileTmpName=$_FILES['file']['tmp_name'];
+    $fileSize=$_FILES['file']['size'];
+    $fileError=$_FILES['file']['error'];
+    $fileType=$_FILES['file']['type'];
+    $fileExt=explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg','jpeg','png','mp3');
+    if(in_array($fileActualExt,$allowed)){
+        if($fileError===0){
+            if(filesize<100000){
+                $fileNameNew = uniqid('',true).".".$fileActualExt;
+                $fileDestination='uploads/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination);
+                header("Location:index.php?uploadsuccess");
+            }else{
+                echo "File too big";
+            }
+        }else{
+            echo "Something went wrong with your file";
+        }
+    }else{
+        echo "you canot upload files of this type";
+    }
+}
