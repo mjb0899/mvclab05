@@ -16,10 +16,14 @@
     <li><a href="battle.php">insert a battle</a></li>
     <li><a href="displayBattles.php">display all battles</a></li>
     <li><a href="uploadpage.html">uploadox</a></li>
+    <li><a href="rating.html">rating</a></li>
+
 
 </ul>
 <?php
 include("dbConnect.php");
+session_start();
+$_SESSION['name']=1;
 $sql_query = "Select * from superheros";
 $result = $db -> query($sql_query);
 while($row = $result -> fetch_array()){
