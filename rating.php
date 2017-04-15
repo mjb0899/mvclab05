@@ -16,7 +16,7 @@ include ("dbConnect.php");
 
 $testid=$_GET['tid'];
 $id=explode('_',$testid);
-$id=$id[0];
+$id=$id[1];
 
 if (isset($_GET['rate']) && !empty($_GET['rate'])) {
 
