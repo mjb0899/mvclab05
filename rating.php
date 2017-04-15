@@ -12,7 +12,11 @@
  */
 
 include ("dbConnect.php");
-$ipaddress=$_GET['uid'];
+//$ipaddress=$_GET['uid'];
+
+$testid=$_GET['tid'];
+$id=explode('_',$testid);
+$id=$id[0];
 
 if (isset($_GET['rate']) && !empty($_GET['rate'])) {
 
@@ -26,7 +30,7 @@ if (isset($_GET['rate']) && !empty($_GET['rate'])) {
         echo $row['id'];
     } else {
 
-        $sql = "INSERT INTO tbl_rating ( rate, user_id) VALUES ('" . $rate . "', '" . $ipaddress . "'); ";
+        $sql = "INSERT INTO tbl_rating ( rate, user_id) VALUES ('" . $rate . "', '" . $id . "'); ";
         if (mysqli_query($db, $sql)) {
             echo "0";
         }
