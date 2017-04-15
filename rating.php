@@ -14,9 +14,9 @@
 include ("dbConnect.php");
 $ipaddress=2;
 
-if (isset($_POST['rate']) && !empty($_POST['rate'])) {
+if (isset($_GET['rate']) && !empty($_GET['rate'])) {
 
-    $rate = $db->real_escape_string($_POST['rate']);
+    $rate = $db->real_escape_string($_GET['rate']);
 
 // check if user has already rated
     $sql = "SELECT id FROM tbl_rating WHERE user_id='" . $ipaddress . "'";
