@@ -17,6 +17,8 @@
     <li><a href="displayBattles.php">display all battles</a></li>
     <li><a href="uploadpage.html">uploadox</a></li>
     <li><a href="rating.html">rating</a></li>
+    <li><a href="rating2.html">rating2</a></li>
+
 
 
 </ul>
