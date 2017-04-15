@@ -51,7 +51,7 @@
         $(document).ready(function () {
             $(".demo1 .stars").click(function () {
 
-                $.get('rating.php',{rate:$(this).val(),uid:6},function(d){
+                $.get('rating.php',{rate:$(this).val(),uid:9},function(d){
                     if(d>0)
                     {
                         alert('You already rated');
