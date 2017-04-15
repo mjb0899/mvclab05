@@ -12,7 +12,7 @@
  */
 
 include ("dbConnect.php");
-$ipaddress=3;
+$ipaddress=4;
 
 if (isset($_GET['rate']) && !empty($_GET['rate'])) {
 
