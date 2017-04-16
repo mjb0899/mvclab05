@@ -8,14 +8,33 @@
     <h1>The superhero system</h1>
     <h2>Create a superhero</h2>
     <p><a href="index.php">Return to home</a></p>
+    <script>
+        $("#myform").submit(function(e) {
+            var postData = $(this).serializeArray();
+
+
+            $.ajax({
+                type: "POST",
+                url: "insertSuperhero.php",
+                datatype: "html",
+                data: postData,
+                success: function (postData) {
+            alert("this"+postData);
+                }
+            });
+
+
+        });
+    </script>
 </header>
 <main>
-    <form action="insertSuperhero.php" method="post">
+    <form method="post" id="myform">
         <input type="text" name="firstname" placeholder="First Name"><br>
         <input type="text" name="lastname" placeholder="Last Name"><br>
         <input type="text" name="superpower" placeholder="Main Super Power"><br>
-        <input type="submit" text="submit">
+       <!-- <input type="submit" text="submit">-->
     </form>
+    <input type="submit" id="submit">
 
 </main>
 </body>
