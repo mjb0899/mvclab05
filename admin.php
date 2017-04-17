@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
     <!--  jquery core -->
     <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
     <!-- Custom jquery scripts -->
     <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
@@ -19,26 +20,22 @@
     </script>
     <script>
         function chk() {
-            var name=document.getElementById('name').value;
-            var name2=document.getElementById('name2').value;
-            var name3=document.getElementById('name3').value;
+            var name=document.getElementById('ad_name').value;
+
+            var pass=document.getElementById('ad_pass').value;
 
 
 
-            var dataString='name='+name+'&name2='+name2+'&name3='+name3;
+            var dataString='name='+name+'&pass='+pass;
             $.ajax({
                 type:"post",
                 url:"reply.php",
                 data: dataString,
                 cache:false,
-                success:function (d) {
-                    if(d>0){
-                        $('#msg').html(d);
+                success:function (html) {
 
-                    }else{
-                        $('#hidediv').hide();
+                        $('#msg').html(html);
 
-                    }
 
                 }
             });
@@ -82,14 +79,16 @@
                 </tr>
                 <tr>
                     <th></th>
-                    <td><input type="submit" class="submit-login" id="submit" /></td>
+                    <td><input type="submit" class="submit-login" id="submit" onclick="return chk()" /></td>
                 </tr>
             </table>
         </div>
-        <!--  end login-inner -->
+        <p id="msg"></p>
+        <div id="hidediv"><h1>Try to hide me!!</h1></div>
+        <!--  end login-inner
         <div class="clear"></div>
         <a href="" class="forgot-pwd">Forgot Password?</a>
-    </div>
+    </div> -->
     <!--  end loginbox -->
 
     <!--  start forgotbox ................................................................................... -->
@@ -109,7 +108,7 @@
             </table>
         </div>
         <!--  end forgot-inner -->
-        <div class="clear"></div>
+        <p class="clear" id="msg"></p>
         <a href="" class="back-login">Back to login</a>
     </div>
     <!--  end forgotbox -->

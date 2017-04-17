@@ -6,14 +6,13 @@
  * Time: 00:33
  */
 $name=$_POST['name'];
-$name2=$_POST['name2'];
+$pass=$_POST['pass'];
 $name3=$_POST['name3'];
 include("dbConnect.php");
 
-$sql = "INSERT INTO superheros(firstName,lastName,mainSuperpower)VALUES ('$name','$name2','$name3')";
 
-if(mysqli_query($db,$sql)){
-    echo 0;
-}
+
+    echo "Response:".$name."->".$pass;
+
 
 
