@@ -14,7 +14,7 @@ echo $name;
 echo $pass;
 
 
-header("refresh:5;location:ad_home.php");
+header("location:ad_home.php");
 
 
 
