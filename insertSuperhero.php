@@ -20,4 +20,4 @@ while($row = $result->fetch_array()){
     $id=$row['superheroID'];
 }
 
-echo "->".$superpower."->".$firstname."->".$lastname."logans id->".$id;
+echo "->".$superpower."->".$firstname."->".$lastname."->".$id;
