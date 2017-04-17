@@ -8,6 +8,7 @@
 $firstname = $_POST["fname"];
 $lastname= $_POST["lname"];
 $superpower = $_POST["power"];
+
 include("dbConnect.php");
 
 
