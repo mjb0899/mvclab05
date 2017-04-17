@@ -12,9 +12,10 @@ session_start();
 $_SESSION['admin']=1;
 echo $name;
 echo $pass;
+echo $_SESSION['admin'];
 
 
-header("location:ad_home.php");
+header("location: ad_home.php");
 
 
 
