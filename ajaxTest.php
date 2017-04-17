@@ -23,7 +23,9 @@
                 data: dataString,
                 cache:false,
                 success:function (html) {
-
+                if(html>0){
+                    alert("working");
+                }else{
                         $('#msg').html(html);
 
 
