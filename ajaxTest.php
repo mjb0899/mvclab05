@@ -27,7 +27,8 @@
                             $('#msg').html(d);
 
                         }else{
-                            alert("hi");
+                            $('#hidediv').hide();
+
                         }
 
 
@@ -51,5 +52,7 @@
 
 <!-- The result of the search will be rendered inside this div -->
 <p id="msg"></p>
+<div id="hidediv"><h1>Try to hide me!!</h1></div>
+
 </body>
 </html>
