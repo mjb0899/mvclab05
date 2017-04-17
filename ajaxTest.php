@@ -23,12 +23,9 @@
                 data: dataString,
                 cache:false,
                 success:function (d) {
-                    if(d>0){
-                        $('#msg').html(d);
-                    }else{
 
-                        alert("hi");
-                    }
+                        $('#msg').html(d);
+
 
                 }
             });
