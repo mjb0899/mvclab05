@@ -6,4 +6,9 @@
  * Time: 00:33
  */
 $name=$_POST['name'];
-echo 1;
+$name2=$_POST['name2'];
+$name3=$_POST['name3'];
+
+
+
+echo $name.$name2.$name3;

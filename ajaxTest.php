@@ -11,8 +11,12 @@
     <script>
         function chk() {
             var name=document.getElementById('name').value;
+            var name2=document.getElementById('name2').value;
+            var name3=document.getElementById('name3').value;
 
-            var dataString='name='+name;
+
+
+            var dataString='name='+name+'name2='+name2+'name3='+name3;
             $.ajax({
                 type:"post",
                 url:"reply.php",
@@ -36,6 +40,10 @@
 <form>
 
     <input type="text" id="name"/>
+    <input type="text" id="name2"/>
+    <input type="text" id="name3"/>
+
+
     <input type="submit" value="submit" onclick="return chk()" />
 </form>
 
