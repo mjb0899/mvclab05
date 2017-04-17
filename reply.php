@@ -13,7 +13,7 @@ include("dbConnect.php");
 $sql = "INSERT INTO superheros(firstName,lastName,mainSuperpower)VALUES ('$name','$name2','$name3')";
 
 if(mysqli_query($db,$sql)){
-    echo 2;
+    echo 0;
 }
 
 

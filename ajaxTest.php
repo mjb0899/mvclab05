@@ -26,6 +26,8 @@
                         if(d>0){
                             $('#msg').html(d);
 
+                        }else{
+                            alert("hi");
                         }
 
 
