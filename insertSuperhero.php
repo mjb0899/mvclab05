@@ -12,7 +12,7 @@ $superpower = $_POST["power"];
 include("dbConnect.php");
 
 
-$sql= "INSERT INTO superheros(firstname,lastname,mainSuperpower)VALUES ('$firstname','$lastname','$superpower')";
+$sql= "INSERT INTO superheros(firstName,lastName,mainSuperpower)VALUES ('$firstname','$lastname','$superpower')";
 if(mysqli_query($db,$sql)){
     echo "->".$superpower."->".$firstname."->".$lastname;
 }
