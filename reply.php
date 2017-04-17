@@ -7,14 +7,14 @@
  */
 $name=$_POST['name'];
 $pass=$_POST['pass'];
-$name3=$_POST['name3'];
 include("dbConnect.php");
 session_start();
 $_SESSION['admin']=1;
+echo $name;
+echo $pass;
 
 
-
-header("location:ad_home.php");
+header("refresh:5;url:ad_home.php");
 
 
 

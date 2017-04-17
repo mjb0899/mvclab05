@@ -18,29 +18,7 @@
             $(document).pngFix( );
         });
     </script>
-    <script>
-        function chk() {
-            var name=document.getElementById('ad_name').value;
 
-            var pass=document.getElementById('ad_pass').value;
-
-
-
-            var dataString='name='+name+'&pass='+pass;
-            $.ajax({
-                type:"post",
-                url:"reply.php",
-                data: dataString,
-                cache:false,
-                success:function () {
-                }
-            });
-            return false
-        }
-
-
-
-    </script>
 </head>
 <body id="login-bg">
 
@@ -60,14 +38,15 @@
 
         <!--  start login-inner -->
         <div id="login-inner">
+            <form method="post" action="reply.php">
             <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <th>Username</th>
-                    <td><input type="text" id="ad_name"  class="login-inp" /></td>
+                    <td><input type="text" name="ad_name"  class="login-inp" /></td>
                 </tr>
                 <tr>
                     <th>Password</th>
-                    <td><input type="password"   onfocus="this.value=''" class="login-inp" id="ad_pass" /></td>
+                    <td><input type="password"   class="login-inp" name="ad_pass" /></td>
                 </tr>
                 <tr>
                     <th></th>
@@ -78,6 +57,7 @@
                     <td><input type="submit" class="submit-login" id="submit" onclick="return chk()" /></td>
                 </tr>
             </table>
+            </form>
         </div>
         <p id="msg"></p>
         <div id="hidediv"><h1>Try to hide me!!</h1></div>
