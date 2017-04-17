@@ -5,8 +5,8 @@
  * Date: 17/04/2017
  * Time: 00:33
  */
-$name=$_POST['ad_name'];
-$pass=$_POST['ad_pass'];
+$name=$_GET['ad_name'];
+$pass=$_GET['ad_pass'];
 include("dbConnect.php");
 session_start();
 $_SESSION['admin']=1;
@@ -14,7 +14,7 @@ echo $name;
 echo $pass;
 
 
-header("refresh:5;url:ad_home.php");
+header("refresh:5;location:ad_home.php");
 
 
 
