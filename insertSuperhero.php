@@ -8,4 +8,13 @@
 $firstname = $_POST["fname"];
 $lastname= $_POST["lname"];
 $superpower = $_POST["power"];
-echo "->".$superpower."->".$firstname."->".$lastname;
+include("dbConnect.php");
+
+
+$sql= "INSERT INTO superheros(firstname,lastname,mainSuperpower)VALUES ('$firstname','$lastname','$superpower')";
+if(mysqli_query($db,$sql)){
+    echo "->".$superpower."->".$firstname."->".$lastname;
+}
+else{
+    echo "Error:".$sql."<br>".mysqli_error($db);
+}
