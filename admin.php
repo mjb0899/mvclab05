@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Internet Dreams</title>
-    <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+    <link rel="stylesheet" href="css/ad_css/screen.css" type="text/css" media="screen" title="default" />
     <!--  jquery core -->
     <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
