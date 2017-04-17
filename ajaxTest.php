@@ -19,7 +19,13 @@
                 data: dataString,
                 cache:false,
                 success:function (d) {
-                    alert("hi");
+                    if(d>0){
+                        $('#msg').html(d);
+                    }else{
+
+                        alert("hi");
+                    }
+
                 }
             });
             return false
