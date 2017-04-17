@@ -6,4 +6,4 @@
  * Time: 00:33
  */
 $name=$_POST['name'];
-echo "response:".$name;
+echo 1;
