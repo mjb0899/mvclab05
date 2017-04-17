@@ -11,4 +11,4 @@ $name3=$_POST['name3'];
 
 
 
-echo $name.$name2.$name3;
+echo "First".$name."<br/>Last".$name2."<br/>laster".$name3;
