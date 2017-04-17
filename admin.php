@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                     <th></th>
-                    <td><input type="submit" class="submit-login" id="submit" onclick="return chk()" /></td>
+                    <td><input type="submit" class="submit-login" id="submit"  /></td>
                 </tr>
             </table>
             </form>
