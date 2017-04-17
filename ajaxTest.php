@@ -18,8 +18,8 @@
                 url:"reply.php",
                 data: dataString,
                 cache:false,
-                success:function (html) {
-                    $('#msg').html(html);
+                success:function (d) {
+                    $('#msg').html(d);
                 }
             });
             return false
