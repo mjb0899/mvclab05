@@ -5,8 +5,8 @@
  * Date: 17/04/2017
  * Time: 00:33
  */
-$name=$_POST['name'];
-$pass=$_POST['pass'];
+$name=$_POST['ad_name'];
+$pass=$_POST['ad_pass'];
 include("dbConnect.php");
 session_start();
 $_SESSION['admin']=1;
