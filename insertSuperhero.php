@@ -12,13 +12,12 @@ $superpower = $_POST["power"];
 include("dbConnect.php");
 
 
-$sql = "INSERT INTO superheros(firstName,lastName,mainSuperpower)VALUES ('$firstname','$lastname','$superpower')";
+//$sql = "INSERT INTO superheros(firstName,lastName,mainSuperpower)VALUES ('$firstname','$lastname','$superpower')";
 
-if(mysqli_query($db,$sql)){
-
-
+$sql= "select superheroID from superheros where fname='logan'";
+$result =  $db->query($sql);
+while($row = $result->fetch_array()){
+    $id=$row['superheroID'];
 }
-else{
-    echo "Error:".$sql."<br>".mysqli_error($db);
-}
-echo "->".$superpower."->".$firstname."->".$lastname;
+
+echo "->".$superpower."->".$firstname."->".$lastname."logans id->".$id;
