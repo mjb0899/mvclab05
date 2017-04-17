@@ -15,6 +15,7 @@
             var fname=document.getElementById('fname').value;
             var lname=document.getElementById('lname').value;
             var power=document.getElementById('power').value;
+
             var dataString='fname='+fname+'&lname='+lname+'&power='+power;
             $.ajax({
                 type:"post",
@@ -30,13 +31,14 @@
     </script>
 </header>
 <main>
-    <form method="post" id="myform">
+    <form>
         <input type="text" name="firstname" id="fname" placeholder="First Name"><br>
         <input type="text" name="lastname" id="lname" placeholder="Last Name"><br>
         <input type="text" name="superpower" id="power" placeholder="Main Super Power"><br>
        <!-- <input type="submit" text="submit">-->
+        <input type="submit" value="submit" onclick="return chk()" />
     </form>
-    <input type="submit" value="submit" onclick="return chk()">
+
 <p id="msg"></p>
 </main>
 </body>
