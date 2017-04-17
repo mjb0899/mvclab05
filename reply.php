@@ -15,7 +15,7 @@ echo $pass;
 echo $_SESSION['admin'];
 
 
-header("location: ad_home.php");
+header("location: index.html");
 
 
 
