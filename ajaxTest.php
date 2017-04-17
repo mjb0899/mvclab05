@@ -7,33 +7,33 @@
  */
 ?><html>
 <head>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
-    var values = $(this).serialize();
+        function chk() {
+            var name=document.getElementById('name').value;
 
-    $.ajax({
-    url: "test.php",
-    type: "post",
-    data: values ,
-    success: function (response) {
-    // you will get response from your php page (what you echo or print)
-
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-    console.log(textStatus, errorThrown);
-    }
-
-
-    });
+            var dataString='name='+name;
+            $.ajax({
+                type:"post",
+                url:"reply.php",
+                data: dataString,
+                cache:false,
+                success:function (html) {
+                    $('#msg').html(html);
+                }
+            });
+            return false
+        }
     </script>
 </head>
 <body>
-<form id="foo">
-    <label for="bar">A bar</label>
-    <input id="bar" name="bar" type="text" value="" />
-    <input type="submit" value="Send" />
+<form>
+
+    <input type="text" id="name"/>
+    <input type="submit" value="submit" onclick="return chk()" />
 </form>
 
 <!-- The result of the search will be rendered inside this div -->
-<div id="result"></div>
+<p id="msg"></p>
 </body>
 </html>

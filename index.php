@@ -18,6 +18,8 @@
     <li><a href="uploadpage.html">uploadox</a></li>
     <li><a href="rating.html">rating</a></li>
     <li><a href="rating2.html">rating2</a></li>
+    <li><a href="ajaxTest.php">rating2</a></li>
+
 
 
 
