@@ -16,7 +16,7 @@
 
 
 
-            var dataString='name='+name+'name2='+name2+'name3='+name3;
+            var dataString='name='+name+'&name2='+name2+'&name3='+name3;
             $.ajax({
                 type:"post",
                 url:"reply.php",
