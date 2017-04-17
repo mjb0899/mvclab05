@@ -19,7 +19,7 @@
                 data: dataString,
                 cache:false,
                 success:function (d) {
-                    $('#msg').html(d);
+                    alert("hi");
                 }
             });
             return false
