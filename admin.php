@@ -32,11 +32,7 @@
                 url:"reply.php",
                 data: dataString,
                 cache:false,
-                success:function (html) {
-
-                        $('#msg').html(html);
-
-
+                success:function () {
                 }
             });
             return false

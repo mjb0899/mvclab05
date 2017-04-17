@@ -9,10 +9,14 @@ $name=$_POST['name'];
 $pass=$_POST['pass'];
 $name3=$_POST['name3'];
 include("dbConnect.php");
+session_start();
+$_SESSION['admin']=1;
 
 
 
-    echo "Response:".$name."->".$pass;
+header("location:ad_home.php");
+
+
 
 
 
