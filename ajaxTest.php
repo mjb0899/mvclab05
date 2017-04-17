@@ -22,11 +22,9 @@
                 url:"reply.php",
                 data: dataString,
                 cache:false,
-                success:function (d) {
-                if(d>0){
-                    alert("working");
-                }else{
-                        $('#msg').html(d);
+                success:function (html) {
+
+                        $('#msg').html(html);
 
 
                 }
