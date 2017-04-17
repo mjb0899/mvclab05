@@ -14,8 +14,6 @@ $sql = "INSERT INTO superheros(firstName,lastName,mainSuperpower)VALUES ('$name'
 
 if(mysqli_query($db,$sql)){
 
-    echo "->".$superpower."->".$firstname."->".$lastname;
-}
+    echo "First->".$name."<br/>Second->".$name2."<br/>last->".$name3;}
 
 
-echo "First->".$name."<br/>Second->".$name2."<br/>last->".$name3;
