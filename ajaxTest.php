@@ -22,14 +22,10 @@
                 url:"reply.php",
                 data: dataString,
                 cache:false,
-                success:function (d) {
-                        if(d>0){
-                            $('#msg').html(d);
+                success:function (html) {
 
-                        }else{
-                            $('#hidediv').hide();
+                            $('#msg').html(html);
 
-                        }
 
                 }
             });
@@ -50,7 +46,7 @@
 
 <!-- The result of the search will be rendered inside this div -->
 <p id="msg"></p>
-<div id="hidediv"><h1>Try to hide me!!</h1></div>
+
 
 </body>
 </html>
