@@ -7,7 +7,7 @@
  */
 $name=$_GET['name'];
 
-alert("hi");
+echo $name;
 
 
 
