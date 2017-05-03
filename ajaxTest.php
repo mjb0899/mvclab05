@@ -34,14 +34,14 @@
     </script>
 </head>
 <body>
-<form>
+<form action="reply.php" method="post">
 
     <input type="text" id="name"/>
     <input type="text" id="name2"/>
     <input type="text" id="name3"/>
 
 
-    <input type="submit" value="submit" onclick="return chk()" />
+    <input type="submit" value="submit"  />
 </form>
 
 <!-- The result of the search will be rendered inside this div -->
