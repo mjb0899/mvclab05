@@ -36,7 +36,7 @@
 <body>
 <form action="reply.php" method="post">
 
-    <input type="text" id="name"/>
+    <input type="text" id="name" name="name"/>
     <input type="text" id="name2"/>
     <input type="text" id="name3"/>
 
